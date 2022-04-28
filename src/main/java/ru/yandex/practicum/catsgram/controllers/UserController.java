@@ -37,4 +37,9 @@ public class UserController {
         userService.update(user);
     }
 
+    @GetMapping("/user/{userMail}")
+    public User getUser(@PathVariable("userMail") String userMail){
+        return userService.findUserByEmail(userMail);
+    }
+
 }
